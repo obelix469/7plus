@@ -8,24 +8,21 @@ Suspend On
 #IfTimeout 150ms ;Might soften up mouse hook timeout problem
 #MaxHotkeysPerInterval 1000 ;Required for mouse wheel
 SetBatchLines, -1
-SetMouseDelay, -1 ; no pause after mouse clicks 
-SetKeyDelay, -1 ; no pause after keys sent 
+SetMouseDelay, -1 ; no pause after mouse clicks
+SetKeyDelay, -1 ; no pause after keys sent
 SetDefaultMouseSpeed, 0
 CoordMode, Mouse, Screen
 SetWinDelay, -1
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases. 
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability. 
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir, %A_ScriptDir%  ; Ensures a consistent starting directory.
 DetectHiddenWindows, On ;We don't want to miss any usually
 SetTitleMatchMode, 2 ;Match anywhere in title
 ;SetFormat, Integer, D
-MajorVersion := 2
-MinorVersion := 6
-BugfixVersion := 0
-BuildVersion := 0
-ComObjError(1)
-StartupTime := A_TickCount
-
+MajorVersion:=2,MinorVersion:=6,BugfixVersion:=0,BuildVersion:=0
+ComObjError(1),StartupTime:=A_TickCount
+; JoyMultiplier:=1.00, JoyThreshold:=25, InvertYAxis:=false,
+; JThresUP:=50+JoyThreshold,JThresLOW:=50-JoyThreshold,YAxisMultiplier:=InvertYAxis?-1:1
 #include %A_ScriptDir%\Globals.ahk ;Some global variable definitions
 #include %A_ScriptDir%\AutoExecute.ahk ;include first to avoid issues with autoexecute ending too soon because of labels
 #include <RichObject>
@@ -38,7 +35,7 @@ StartupTime := A_TickCount
 #include <Edit>
 #include <Functions>
 #include <gdip>
-;#include <json> ;Can be used for CURLPlugin Chrome bookmark import. Right now lson is used because that is included anyway.
+; #include <json> ;Can be used for CURLPlugin Chrome bookmark import. Right now lson is used because that is included anyway.
 #include <Monster>
 #include <Navigation>
 #include <Parse>
@@ -87,3 +84,4 @@ StartupTime := A_TickCount
 #include %A_ScriptDir%\SlideWindows.ahk
 #include %A_ScriptDir%\JoyControl.ahk
 #include %A_ScriptDir%\ExplorerTabs.ahk
+; #include E:\AH\lib\Taskbar.ahk
